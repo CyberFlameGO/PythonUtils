@@ -1,0 +1,3 @@
+[console_scripts]
+console = console.cli:setuptools_entry_point
+

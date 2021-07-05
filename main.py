@@ -1,6 +1,4 @@
-from System import System
-
-System = System()
+from System import *
 
 def return_test():
     pp = input("what came in the mail today").lower()
@@ -20,11 +18,7 @@ print("yuh yuh yuh")
 #println("skrrt")
 #println("skrrt2")
 System.out.println("hi")
-
-System.out.println("hi")
-System.out.println("hi")
-System.out.println("hi")
-
 System.out.print("hi")
+System.out.println("hi")
 System.out.print("hi")
 

@@ -1,9 +1,10 @@
-from Out import Out
-
+import Out
 
 class System:
     """
-System
+    System
     """
+
     def __init__(self):
-        self.out = Out()
+        self.out = Out.Out()
+System=System()
