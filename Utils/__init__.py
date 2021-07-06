@@ -2,10 +2,22 @@
 """
 Class
 """
+import sys
+
 true = True
 false = False
 null = None
 empty = ""
+
+HEADER = '\033[95m'
+OKBLUE = '\033[94m'
+OKCYAN = '\033[96m'
+OKGREEN = '\033[92m'
+WARNING = '\033[93m'
+FAIL = '\033[91m'
+ENDC = '\033[0m'
+BOLD = '\033[1m'
+UNDERLINE = '\033[4m'
 
 
 class System:
@@ -21,6 +33,7 @@ class Out:
     """
     Out
     """
+
     def __init__(self):
         self.placeholder = null
 
@@ -32,15 +45,20 @@ class Out:
         :param value:
         """
         print(value, end=end)
+        sys.stdout.flush()
 
     @staticmethod
-    def print(value, end=empty):
+    def print(value: str, iterability: bool):
         """
 
-        :param end:
+        :type iterability: bool
+        :param iterability:
         :param value:
         """
-        print(value, end=end)
+        if iterability:
+            sys.stdout.writelines(value)
+        else:
+            sys.stdout.write(value)
 
 
 System = System()
