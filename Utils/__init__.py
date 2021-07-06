@@ -10,7 +10,7 @@ empty = ""
 
 class System:
     """
-    init
+    System
     """
 
     def __init__(self):
@@ -18,6 +18,9 @@ class System:
 
 
 class Out:
+    """
+    Out
+    """
     def __init__(self):
         self.placeholder = null
 
