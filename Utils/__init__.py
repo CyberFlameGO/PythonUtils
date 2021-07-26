@@ -4,24 +4,19 @@ Class
 """
 import sys
 
-
-class VarUtils:
-    """
-    Useful variables
-    """
-    true = True
-    false = False
-    null = None
-    empty = ""
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
+true = True
+false = False
+null = None
+empty = ""
+HEADER = '\033[95m'
+OKBLUE = '\033[94m'
+OKCYAN = '\033[96m'
+OKGREEN = '\033[92m'
+WARNING = '\033[93m'
+FAIL = '\033[91m'
+ENDC = '\033[0m'
+BOLD = '\033[1m'
+UNDERLINE = '\033[4m'
 
 
 class System:
@@ -40,7 +35,7 @@ class Out:
     """
 
     def __init__(self):
-        self.placeholder = VarUtils.null
+        self.placeholder = null
 
     @staticmethod
     def println(value, end="\r\n"):
@@ -53,7 +48,7 @@ class Out:
         sys.stdout.flush()
 
     @staticmethod
-    def print(value: str, iterability: bool = VarUtils.true):
+    def print(value: str, iterability: bool = true):
         """
 
         :type iterability: bool
@@ -72,20 +67,19 @@ class Err:
     """
 
     def __init__(self):
-        self.placeholder = VarUtils.null
+        self.placeholder = null
 
     @staticmethod
-    def println(value, end="\r\n"):
+    def println(value):
         """
 
-        :param end:
         :param value:
         """
-        print(value, end=end)
+        sys.stderr.println(value)
         sys.stderr.flush()
 
     @staticmethod
-    def print(value: str, iterability: bool = VarUtils.true):
+    def print(value: str, iterability: bool = true):
         """
 
         :type iterability: bool
