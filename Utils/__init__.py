@@ -4,20 +4,24 @@ Class
 """
 import sys
 
-true = True
-false = False
-null = None
-empty = ""
 
-HEADER = '\033[95m'
-OKBLUE = '\033[94m'
-OKCYAN = '\033[96m'
-OKGREEN = '\033[92m'
-WARNING = '\033[93m'
-FAIL = '\033[91m'
-ENDC = '\033[0m'
-BOLD = '\033[1m'
-UNDERLINE = '\033[4m'
+class VarUtils:
+    """
+    Useful variables
+    """
+    true = True
+    false = False
+    null = None
+    empty = ""
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 
 class System:
@@ -27,6 +31,7 @@ class System:
 
     def __init__(self):
         self.out = Out()
+        self.err = Err()
 
 
 class Out:
@@ -35,7 +40,7 @@ class Out:
     """
 
     def __init__(self):
-        self.placeholder = null
+        self.placeholder = VarUtils.null
 
     @staticmethod
     def println(value, end="\r\n"):
@@ -48,7 +53,7 @@ class Out:
         sys.stdout.flush()
 
     @staticmethod
-    def print(value: str, iterability: bool):
+    def print(value: str, iterability: bool = VarUtils.true):
         """
 
         :type iterability: bool
@@ -59,6 +64,38 @@ class Out:
             sys.stdout.writelines(value)
         else:
             sys.stdout.write(value)
+
+
+class Err:
+    """
+    Out
+    """
+
+    def __init__(self):
+        self.placeholder = VarUtils.null
+
+    @staticmethod
+    def println(value, end="\r\n"):
+        """
+
+        :param end:
+        :param value:
+        """
+        print(value, end=end)
+        sys.stderr.flush()
+
+    @staticmethod
+    def print(value: str, iterability: bool = VarUtils.true):
+        """
+
+        :type iterability: bool
+        :param iterability:
+        :param value:
+        """
+        if iterability:
+            sys.stderr.writelines(value)
+        else:
+            sys.stderr.write(value)
 
 
 System = System()
