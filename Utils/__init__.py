@@ -35,7 +35,7 @@ class Out:
     """
 
     def __init__(self):
-        self.placeholder = null
+        pass
 
     @staticmethod
     def println(value, end="\r\n"):

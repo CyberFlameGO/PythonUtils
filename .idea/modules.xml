@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/RandomPythonStuff.iml" filepath="$PROJECT_DIR$/.idea/RandomPythonStuff.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PythonUtils.iml" filepath="$PROJECT_DIR$/.idea/PythonUtils.iml" />
     </modules>
   </component>
 </project>
